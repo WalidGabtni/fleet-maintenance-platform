@@ -1,5 +1,4 @@
 -- Work Order Tracker — MVP schema
--- Source: docs/workorder_mvp_schema.md
 
 -- Enable UUID generation
 create extension if not exists "pgcrypto";
