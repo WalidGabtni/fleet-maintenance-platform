@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and builds
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Supabase / Vercel local state
+supabase/.temp/
+supabase/.branches/
+.vercel/
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# AI tooling
+CLAUDE.md
+AGENTS.md
+.claude/

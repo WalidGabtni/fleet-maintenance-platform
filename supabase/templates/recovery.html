@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body style="margin:0; padding:0; background-color:#f6f3f0; font-family:Arial, Helvetica, sans-serif;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f6f3f0; padding:32px 16px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" style="max-width:420px; background-color:#ffffff; border-radius:12px; overflow:hidden; border:1px solid #e1ddda;">
+            <tr>
+              <td style="background-color:#140c09; padding:24px 32px; text-align:center;">
+                <span style="display:inline-block; width:32px; height:32px; background-color:#d81f23; border-radius:8px; line-height:32px; color:#ffffff; font-weight:bold; font-size:16px;">M</span>
+                <span style="color:#f9f2eb; font-size:18px; font-weight:bold; margin-left:8px; vertical-align:middle;">Fleet Data</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:32px;">
+                <h1 style="margin:0 0 12px; font-size:20px; color:#231e1c;">Réinitialisation de mot de passe</h1>
+                <p style="margin:0 0 24px; font-size:14px; line-height:1.5; color:#6e6764;">
+                  Nous avons reçu une demande de réinitialisation de mot de passe. Saisissez le code ci-dessous sur la page de connexion pour continuer.
+                </p>
+                <div style="text-align:center; margin:0 0 24px;">
+                  <span style="display:inline-block; padding:16px 28px; background-color:#f6f3f0; border:1px solid #e1ddda; border-radius:8px; font-size:32px; font-weight:bold; letter-spacing:8px; color:#231e1c;">
+                    {{ .Token }}
+                  </span>
+                </div>
+                <p style="margin:0; font-size:13px; line-height:1.5; color:#6e6764;">
+                  Ce code expire dans une heure. Si vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet e-mail en toute sécurité.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

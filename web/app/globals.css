@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Fleet Data palette — brand (near-black, cinematic: sidebar + login + app dark mode)
+   and app (warm off-white: functional daily-use light mode) for neutrals. Accent is the
+   steel-blue from the dashboard module cards (--color-slate-800/900 below) — accent-800/900
+   are that exact navy so buttons, links and card headers read as one consistent blue. */
+@theme {
+  --color-accent-50: oklch(0.978 0.006 250);
+  --color-accent-100: oklch(0.945 0.014 248);
+  --color-accent-200: oklch(0.89 0.024 246);
+  --color-accent-300: oklch(0.79 0.040 247);
+  --color-accent-400: oklch(0.65 0.055 248);
+  --color-accent-500: oklch(0.55 0.065 250);
+  --color-accent-600: oklch(0.47 0.062 249);
+  --color-accent-700: oklch(0.40 0.058 246);
+  --color-accent-800: oklch(0.345 0.073 254);
+  --color-accent-900: oklch(0.275 0.049 251);
+
+  --color-brand-bg: oklch(0.165 0.014 45);
+  --color-brand-bg-raised: oklch(0.215 0.016 45);
+  --color-brand-bg-inset: oklch(0.125 0.012 45);
+  --color-brand-border: oklch(0.315 0.020 45);
+  --color-brand-border-soft: oklch(0.26 0.018 45);
+  --color-brand-fg: oklch(0.965 0.012 70);
+  --color-brand-fg-muted: oklch(0.685 0.020 55);
+  --color-brand-fg-faint: oklch(0.48 0.018 50);
+
+  --color-app-bg: oklch(0.985 0.004 60);
+  --color-app-surface: oklch(0.995 0.003 60);
+  --color-app-surface-sunk: oklch(0.965 0.005 55);
+  --color-app-border: oklch(0.90 0.006 55);
+  --color-app-border-soft: oklch(0.945 0.005 55);
+  --color-app-fg: oklch(0.24 0.008 50);
+  --color-app-fg-muted: oklch(0.52 0.010 50);
+  --color-app-fg-faint: oklch(0.66 0.010 50);
+
+  /* Module-dashboard slate-blue monochrome — status is conveyed by icon shape
+     and shade/weight here, never by hue (no red/amber/green). */
+  --color-slate-50: #f6f8fa;
+  --color-slate-100: #eef2f6;
+  --color-slate-200: #dbe3ea;
+  --color-slate-400: #5b7690;
+  --color-slate-600: #3d5972;
+  --color-slate-700: #2c4a63;
+  --color-slate-800: #1c3a5e;
+  --color-slate-900: #14293f;
+}
+
+:root {
+  --background: var(--color-app-bg);
+  --foreground: var(--color-app-fg);
+  color-scheme: light;
+}
+
+.dark {
+  --background: var(--color-brand-bg);
+  --foreground: var(--color-brand-fg);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-1%, -1%); }
+}
+@keyframes ember-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 120px -160px; }
+}
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px oklch(0.55 0.065 250 / 0.25), 0 8px 30px oklch(0.165 0.014 45 / 0.5); }
+  50% { box-shadow: 0 0 0 1px oklch(0.55 0.065 250 / 0.5), 0 8px 40px oklch(0.55 0.065 250 / 0.35); }
+}
+@keyframes sun-flicker {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.06); }
+}
+@keyframes toast-in {
+  0% { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
